@@ -21,10 +21,10 @@ out = p.stdout.read()
 out = re.sub(b"[^.]*{", b"{", out)
 sp = json.loads(out.decode("utf8"))
 for key,value in sp.items():
-    print(key + "=" + value)
+    print(f"{key}={value}")
 for key,value in account.items():
-    print(key + "=" + value)
+    print(f"{key}={value}")
 for key,value in cloud.items():
     if (not value.endswith("/")):
-        value = value + "/"
-    print(key + "=" + value.replace("https://", r"https\://"))
+        value = f"{value}/"
+    print(f"{key}=" + value.replace("https://", r"https\://"))
